@@ -64,7 +64,7 @@ const Contactme = () => {
         </div>
         <button style={{ width: '140px', height: '40px' }}>Contact Me</button>
       </div>
-      <button onclick={handleSendEmail}>Go Back</button>
+      <button onClick={handleSendEmail}>Go Back</button>
     </div>
   );
 };
