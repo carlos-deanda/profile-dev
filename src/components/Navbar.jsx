@@ -10,11 +10,11 @@ const Navbar = ({ children }) => {
             <Link to="/home">Home</Link>
           </p>
           <p>
-            <Link to="/AboutMe">Home</Link></p>
+            <Link to="/AboutMe">About Me</Link></p>
           <p>
-            <Link to="/Projects">Home</Link></p>
+            <Link to="/Projects">Projects</Link></p>
         <p>
-            <Link to="/ContactMe">Home</Link>
+            <Link to="/ContactMe">Contact Me</Link>
         </p>
         </div>
       </div>
