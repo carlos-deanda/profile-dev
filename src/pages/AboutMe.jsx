@@ -1,25 +1,70 @@
-import {Link} from "react-router";
+import './AboutMe.css';
+import { Link } from 'react-router-dom';
+import me from '../assets/AboutMeCarlos1.jpeg';
 
 const AboutMe = () => {
-    return(
-     <div>   
-        <h1>Carlos de Anda</h1>
-        <h2>Who Am I?</h2>
-        <p>
-            I am a tech enthusiast and problem solver currently pursuing my B.S. in 
-            <strong> Computer Science and Technology</strong> at Tecnológico de Monterrey. 
-            Being part of the <strong>EGS Global Leadership Program</strong> has shaped my 
-            multicultural perspective and results-oriented mindset.
-        </p>
-        <p>
-            I thrive in competitive environments, as shown by achieving <strong>third place nationwide </strong> 
-            in the Mexican robotics lunar rover tournament and qualifying for the 
-            <strong> Houston Championship</strong> in the FIRST Robotics Competition.
-        </p>
-        <h2>My habilities</h2>
-        <p>TODAS</p>
-    </div>
-    )
-}
+  return (
+    <section className="about-container">
+
+      <div className="about-wrapper">
+
+        {/* TEXTO */}
+        <div className="about-text">
+          
+          <p className="about-intro">Who I am</p>
+
+          <h1 className="about-title">
+            Carlos <span>de Anda</span>
+          </h1>
+
+          <p className="about-tagline">
+            Computer Science student building impactful digital experiences.
+          </p>
+
+          <div className="about-content">
+            <p>
+              I am currently pursuing my B.S. in <strong>Computer Science and Technology </strong> 
+              at Tecnológico de Monterrey. As part of the <strong>EGS Global Leadership Program</strong>, 
+              I’ve developed a global mindset and a strong focus on collaboration.
+            </p>
+
+            <p>
+              I enjoy solving complex problems and working in high-performance environments 
+              where I can combine creativity with technical execution.
+            </p>
+
+            <p>
+              I achieved <strong>3rd place nationwide</strong> in a lunar rover robotics competition 
+              and qualified for the <strong>FIRST Robotics Houston Championship</strong>.
+            </p>
+          </div>
+
+          <div className="about-skills">
+            <h2>Skills</h2>
+            <ul>
+              <li>Full-Stack Development</li>
+              <li>Problem Solving</li>
+              <li>Teamwork</li>
+              <li>Leadership</li>
+            </ul>
+          </div>
+
+          <div className="about-cta">
+            <Link to="/projects" className="btn">
+              View My Work
+            </Link>
+          </div>
+
+        </div>
+
+        <div className="about-photo">
+          <img src={me} alt="Carlos de Anda" />
+        </div>
+
+      </div>
+
+    </section>
+  );
+};
 
 export default AboutMe;
