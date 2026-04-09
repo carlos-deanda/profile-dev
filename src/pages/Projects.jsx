@@ -19,7 +19,9 @@ const Projects = () => {
       <div className="projects-grid">
 
         <div className="project-card">
-          <img src={SmartMirror} alt="Smart Mirror" />
+          <div className="project-image">
+            <img src={SmartMirror} alt="Smart Mirror" />
+          </div>
 
           <h2>Smart Mirror</h2>
           <p>
@@ -37,7 +39,9 @@ const Projects = () => {
         </div>
 
         <div className="project-card">
-          <img src={Netflix} alt="Netflix" />
+          <div className="project-image">
+            <img src={Netflix} alt="Netflix" />
+          </div>
 
           <h2>Netflix Simulation</h2>
           <p>
@@ -56,7 +60,9 @@ principles for rating and filtering features
         </div>
 
         <div className="project-card">
-          <img src={Calculator} alt="Calculator" />
+          <div className="project-image">
+            <img src={Calculator} alt="Calculator" />
+          </div>
 
           <h2>Web Calculator</h2>
           <p>

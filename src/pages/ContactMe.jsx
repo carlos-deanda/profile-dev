@@ -70,7 +70,7 @@ const ContactMe = () => {
           required
         />
 
-        <button type="submit" className="btn-submit">Send Message</button>
+        <button type="submit" className="btn btn-submit">Send Message</button>
       </form>
 
     </section>

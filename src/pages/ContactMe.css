@@ -56,22 +56,8 @@
 }
 
 .btn-submit {
-  width: 180px;
-  padding: 14px 0;
-  background-color: var(--accent-blue);
-  color: #0f172a;
-  font-weight: 700;
-  text-transform: uppercase;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
   align-self: center;
-  transition: all 0.3s ease;
-}
-
-.btn-submit:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.5);
+  width: 180 px;
 }
 
 .back-link {

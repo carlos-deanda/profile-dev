@@ -1,6 +1,7 @@
 import './AboutMe.css';
 import { Link } from 'react-router-dom';
 import me from '../assets/AboutMeCarlos1.jpeg';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const AboutMe = () => {
   return (
@@ -47,6 +48,26 @@ const AboutMe = () => {
               <li>Teamwork</li>
               <li>Leadership</li>
             </ul>
+          </div>
+
+          <div className="about-socials">
+            <a 
+              href="https://github.com/carlos-deanda"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn social-btn"
+            >
+              <FaGithub /> GitHub
+            </a>
+
+            <a 
+              href="https://linkedin.com/in/carlos-de-anda" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn social-btn"
+            >
+             <FaLinkedin/>LinkedIn
+            </a>
           </div>
 
           <div className="about-cta">

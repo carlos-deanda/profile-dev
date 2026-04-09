@@ -63,6 +63,28 @@
   font-size: 0.9rem;
 }
 
+.about-socials {
+  margin-top: 25px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.social-btn svg {
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.social-btn:hover svg {
+  transform: scale(1.15);
+}
+
 .about-cta {
   margin-top: 30px;
 }
@@ -75,7 +97,8 @@
 }
 
 .about-photo img {
-  width: 260px;
+  width: 100%;
+  max-width: 380px; 
   border-radius: 20px;
   object-fit: cover;
   box-shadow: 0 10px 30px rgba(56, 189, 248, 0.25);
