@@ -1,6 +1,4 @@
-/* index.css */
 :root {
-  /* Usamos las mismas variables que definimos en App.css para no confundirnos */
   --bg-color: #0f172a; 
   --accent-blue: #38bdf8; 
   --text-white: #f8fafc;
@@ -17,7 +15,6 @@ body {
   background-color: var(--bg-color);
   color: var(--text-white);
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  /* Quitamos el flex y el place-items que traía Vite por defecto */
   display: block; 
   min-height: 100vh;
   width: 100%;

@@ -18,9 +18,6 @@ const AboutMe = () => {
         </p>
         <h2>My habilities</h2>
         <p>TODAS</p>
-        <p>
-            <Link to = "/">Go Back</Link>
-        </p>
     </div>
     )
 }

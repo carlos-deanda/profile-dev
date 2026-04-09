@@ -1,12 +1,11 @@
 .container-navbar {
     display: flex;
     justify-content: center;
-    align-items: center; /* Centra los links verticalmente */
-    height: 70px;       /* FUERZA una altura para que no sea 0 */
+    align-items: center; 
+    height: 70px;      
     width: 100%;
-    background-color: #111827; /* Un gris un poco más claro que el fondo para que lo veas */
-    border-bottom: 2px solid var(--accent-blue); /* Una línea azul para confirmar que está ahí */
-    position: relative;
+    background-color: #111827; 
+    border-bottom: 2px solid var(--accent-blue); 
     z-index: 1000;
 }
 
@@ -16,7 +15,7 @@
 }
 
 .links a {
-    color: white !important; /* Forzamos blanco para verlos */
+    color: white !important;
     text-decoration: none;
     font-size: 1rem;
     font-weight: bold;
