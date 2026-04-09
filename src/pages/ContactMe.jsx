@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import {Link} from "react-router";
+import { Link } from 'react-router-dom';
+import './ContactMe.css';
 
-const Contactme = () => {
+const ContactMe = () => {
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -9,65 +10,71 @@ const Contactme = () => {
     message: '',
   });
 
-  const handleOnchange = (event) => {
+  const handleOnChange = (event) => {
     const { name, value } = event.target;
-    setForm((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-    console.log(form);
+    setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSendEmail = async(e) => {
+  const handleSendEmail = async (e) => {
     e.preventDefault();
     const data = await fetch('/api/server', {
-      method: "POST",
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        name: form.name,
-        email: form.email,
-        message: form.message,
-      }),
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(form),
     });
-
     const res = await data.json();
     console.log(res);
   };
 
-
   return (
-    <div>
-      Contactme
-      <div>
-        <div style={{ display: 'flex', gap: '20px' }}>
+    <section className="contact-container">
+      <h1 className="contact-title">Contact Me</h1>
+      <p className="contact-description">
+        Have a project in mind or just want to say hi? Fill out the form below and I’ll get back to you!
+      </p>
+
+      <form className="contact-form" onSubmit={handleSendEmail}>
+        <div className="input-group">
           <input
-            name="name"
             type="text"
+            name="name"
+            placeholder="Your Name"
             value={form.name}
-            onChange={handleOnchange}
+            onChange={handleOnChange}
+            required
           />
           <input
-            name="email"
             type="email"
+            name="email"
+            placeholder="Your Email"
             value={form.email}
-            onChange={handleOnchange}
+            onChange={handleOnChange}
+            required
           />
         </div>
-        <div style={{ paddingTop: '20px' }}>
-          <textarea
-            name="message"
-            type="message"
-            rows="10"
-            cols="50"
-            value={form.message}
-            onChange={handleOnchange}
-          />
-        </div>
-        <button onClick={handleSendEmail} style={{ width: '140px', height: '40px' }}>Contact Me</button>
-      </div>
-      <Link to = "/">Go Back</Link>
-    </div>
+
+        <input
+          type="text"
+          name="subject"
+          placeholder="Subject"
+          value={form.subject}
+          onChange={handleOnChange}
+        />
+
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          rows="8"
+          value={form.message}
+          onChange={handleOnChange}
+          required
+        />
+
+        <button type="submit" className="btn-submit">Send Message</button>
+      </form>
+
+    </section>
   );
 };
 
-export default Contactme;
+export default ContactMe;

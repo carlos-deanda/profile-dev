@@ -1,5 +1,7 @@
 import './Projects.css';
 import SmartMirror from '../assets/SmartMirror.jpeg';
+import Netflix from '../assets/Netflix.jpg';
+import Calculator from '../assets/Calculator.jpeg';
 
 
 const Projects = () => {
@@ -35,7 +37,7 @@ const Projects = () => {
         </div>
 
         <div className="project-card">
-          <div className="project-image"></div>
+          <img src={Netflix} alt="Netflix" />
 
           <h2>Netflix Simulation</h2>
           <p>
@@ -54,7 +56,7 @@ principles for rating and filtering features
         </div>
 
         <div className="project-card">
-          <div className="project-image"></div>
+          <img src={Calculator} alt="Calculator" />
 
           <h2>Web Calculator</h2>
           <p>
