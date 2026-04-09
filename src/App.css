@@ -1,8 +1,16 @@
-
-
+:root {
+  /* Fondo: Un gris azulado muy oscuro y elegante */
+  --bg-color: #0f172a; 
+  
+  /* Acento: Un azul eléctrico brillante (sustituye al verde) */
+  --accent-blue: #38bdf8; 
+  
+  /* Texto: Blanco puro y un gris plateado para descripciones */
+  --text-white: #f8fafc;
+  --text-gray: #94a3b8;
+}
 
 body {
-    background-color: #1D0c26;
-    color: white;
-    font-family: arial;
+  background-color: var(--bg-color);
+  color: var(--text-white);
 }

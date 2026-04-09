@@ -1,29 +1,90 @@
+/* Hero.css */
+
+/* 1. Contenedor principal: Centra todo en pantalla */
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    text-align: center;
+    min-height: 85vh;       /* Casi toda la altura de la pantalla */
+    padding: 0 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* 2. Título principal: Grande y blanco */
 .main-text {
-  font-size: 96px;
-  font-weight: bold;
-  color: white;
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 800;
+    color: var(--text-white);
+    line-height: 1.1;
+    margin: 0;
 }
 
+/* Texto secundario con degradado azul */
 .secondary-text {
-  background: linear-gradient(0.25turn, #00ff9d, #ebf8e1, #cf5cff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    display: block;
+    background: linear-gradient(90deg, var(--accent-blue), #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
+/* 3. Descripción: Gris para que no compita con el título */
+.hero-description {
+    max-width: 650px;
+    margin: 25px auto;
+    color: var(--text-gray);
+    font-size: 1.15rem;
+    line-height: 1.6;
+}
 
-.btn{
-    width: 191px;
+/* 4. Grupo de botones */
+.button-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* 5. Botón Base (El azul) */
+.btn {
+    width: 200px;
     height: 56px;
     border: none;
-    background-color: #00ff9d;
-    font-size: 20px;
+    background-color: var(--accent-blue) !important; /* Forza el azul */
+    color: #0f172a !important;                       /* Letra azul muy oscuro para contraste */
+    font-size: 14px;
+    font-weight: 800;
     text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+    
+    /* Centrado interno del texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
-.btn-container {
-    padding-top: 5%;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(56, 189, 248, 0.5);
+    filter: brightness(1.1);
+}
+
+/* 6. Botón Secundario (El de borde azul) */
+.btn-secondary {
+    background-color: transparent !important;
+    border: 2px solid var(--accent-blue) !important;
+    color: var(--accent-blue) !important;
+    box-shadow: none !important;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(56, 189, 248, 0.1) !important;
+    color: white !important;
 }

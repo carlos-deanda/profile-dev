@@ -1,16 +1,23 @@
-
-
-.container-navbar{
+.container-navbar {
     display: flex;
     justify-content: center;
-
+    align-items: center; /* Centra los links verticalmente */
+    height: 70px;       /* FUERZA una altura para que no sea 0 */
+    width: 100%;
+    background-color: #111827; /* Un gris un poco más claro que el fondo para que lo veas */
+    border-bottom: 2px solid var(--accent-blue); /* Una línea azul para confirmar que está ahí */
+    position: relative;
+    z-index: 1000;
 }
 
-.links{
+.links {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    gap: 20px;
-    
+    gap: 30px;
+}
+
+.links a {
+    color: white !important; /* Forzamos blanco para verlos */
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
 }

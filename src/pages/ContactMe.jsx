@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Link} from "react-router";
 
 const Contactme = () => {
   const [form, setForm] = useState({
@@ -62,9 +63,9 @@ const Contactme = () => {
             onChange={handleOnchange}
           />
         </div>
-        <button style={{ width: '140px', height: '40px' }}>Contact Me</button>
+        <button onClick={handleSendEmail} style={{ width: '140px', height: '40px' }}>Contact Me</button>
       </div>
-      <button onClick={handleSendEmail}>Go Back</button>
+      <Link to = "/">Go Back</Link>
     </div>
   );
 };
