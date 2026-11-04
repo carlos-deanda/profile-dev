@@ -1,16 +1,21 @@
 // Small shared pieces so every section uses the same type scale and container.
 
+import EqEcho from './EqEcho';
+
 export function Container({ className = '', children }) {
   return <div className={`mx-auto w-full max-w-[1120px] px-6 ${className}`}>{children}</div>;
 }
 
 export function SectionTitle({ children, className = '' }) {
   return (
-    <h2
-      className={`text-[clamp(40px,5vw,64px)] leading-[1.05] font-bold tracking-[-0.03em] ${className}`}
-    >
-      {children}
-    </h2>
+    <div className="flex flex-col gap-4">
+      <h2
+        className={`text-[clamp(40px,5vw,64px)] leading-[1.05] font-bold tracking-[-0.03em] ${className}`}
+      >
+        {children}
+      </h2>
+      <EqEcho />
+    </div>
   );
 }
 
@@ -23,9 +28,7 @@ export function Eyebrow({ children, accent = false, dark = false }) {
       ? 'text-muted-on-dark'
       : 'text-muted';
   return (
-    <p className={`text-[13px] font-semibold uppercase tracking-[0.08em] ${color}`}>
-      {children}
-    </p>
+    <p className={`text-[13px] font-semibold uppercase tracking-[0.08em] ${color}`}>{children}</p>
   );
 }
 
