@@ -295,6 +295,28 @@ export const places = {
   ],
 };
 
+// Climax after the "leap of faith" scene: music and engineering mixing (visual first, then sound).
+// Tempo, chords and colors live here so they can be changed without touching the components.
+export const climax = {
+  sectionLabel: 'Music and engineering mixing together',
+  line: 'Combining both is my dream.',
+  bpm: 124,
+  progression: ['F', 'G', 'Em', 'Am'], // one chord per bar
+  // "Sunset neon": coral (tint of the wine accent), orange, yellow, aqua. One color per chord.
+  // Alternative "Aurora": ['#e8607f', '#8a5cff', '#3da5ff', '#3ef0b0'].
+  palette: ['#ff4d6d', '#ff9f1c', '#ffd23f', '#2ec4b6'],
+  // Optional sound. It never starts on its own; the button starts it.
+  sound: {
+    play: 'Play with sound',
+    loading: 'Loading sound…',
+    mute: 'Mute',
+    unmute: 'Unmute',
+    hint: 'Optional. Music made in your browser, only if you press play.',
+    statusOn: 'Sound on',
+    statusMuted: 'Sound muted',
+  },
+};
+
 export const about = {
   question: 'What is a leap of faith?',
   paragraphs: [

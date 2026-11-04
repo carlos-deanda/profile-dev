@@ -11,10 +11,14 @@ function subscribe(notify) {
 
 const getSnapshot = () => window.matchMedia(DESKTOP).matches;
 
+export function useIsDesktop() {
+  return useSyncExternalStore(subscribe, getSnapshot);
+}
+
 // True when scroll-driven motion should run: wide screen and no reduced-motion preference.
 // Everywhere else (phones, reduced motion) components render their static version.
 export default function useScrollMotion() {
   const reduced = useReducedMotion();
-  const isDesktop = useSyncExternalStore(subscribe, getSnapshot);
+  const isDesktop = useIsDesktop();
   return isDesktop && !reduced;
 }
