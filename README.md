@@ -1,16 +1,33 @@
-# React + Vite
+# Carlos de Anda — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My personal site: projects, experience and how to reach me.
 
-Currently, two official plugins are available:
+**Stack:** React 19 · Vite · Tailwind CSS v4 · deployed on Vercel.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Run it locally
 
-## React Compiler
+```bash
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # production build into dist/
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Editing content
 
-## Expanding the ESLint configuration
+All the text lives in [`src/data/profile.js`](src/data/profile.js), not in the components.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Add a project:** add an object to `projects` with `group: 'software'` or `'hardware'`.
+  For a screenshot, import the image at the top of the file and set `image` and `imageAlt`
+  on the project. Without them the card shows a gray placeholder.
+- **Experience, stats, skills, contact links:** the arrays and objects in the same file.
+- **Accent color:** `--color-accent` in [`src/index.css`](src/index.css).
+
+## Structure
+
+```
+src/
+  data/profile.js      # all site content
+  components/          # one component per section + shared ui.jsx
+  assets/              # optimized images (webp)
+api/server.js          # Vercel function for a contact form (not used by the current design)
+```

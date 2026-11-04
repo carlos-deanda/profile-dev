@@ -1,23 +1,27 @@
-import { Routes, Route } from 'react-router-dom';
-
 import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import AboutMe from './pages/AboutMe';
-import Projects from './pages/Projects';
-import ContactMe from './pages/ContactMe';
+import Hero from './components/Hero';
+import Stats from './components/Stats';
+import Work from './components/Work';
+import Experience from './components/Experience';
+import About from './components/About';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <>
-      <Navbar /> 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/AboutMe" element={<AboutMe />} />
-        <Route path="/Projects" element={<Projects />} />
-        <Route path="/ContactMe" element={<ContactMe />} />
-      </Routes>
+      <Navbar />
+      <main>
+        <Hero />
+        <Stats />
+        <Work />
+        <Experience />
+        <About />
+        <Contact />
+      </main>
+      <Footer />
     </>
   );
 }
 
-export default App
+export default App;
