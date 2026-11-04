@@ -1,23 +1,35 @@
-import { Routes, Route } from 'react-router-dom';
-
+import { LazyMotion, domAnimation } from 'motion/react';
 import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import AboutMe from './pages/AboutMe';
-import Projects from './pages/Projects';
-import ContactMe from './pages/ContactMe';
+import Hero from './components/Hero';
+import Stats from './components/Stats';
+import LeapScene from './components/LeapScene';
+import Work from './components/Work';
+import WhyIBuild from './components/WhyIBuild';
+import CityMap from './components/CityMap';
+import Experience from './components/Experience';
+import About from './components/About';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <>
-      <Navbar /> 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/AboutMe" element={<AboutMe />} />
-        <Route path="/Projects" element={<Projects />} />
-        <Route path="/ContactMe" element={<ContactMe />} />
-      </Routes>
-    </>
+    // `m` components get their renderer from LazyMotion; without it scroll values never reach the DOM.
+    <LazyMotion features={domAnimation} strict>
+      <Navbar />
+      <main>
+        <Hero />
+        <Stats />
+        <LeapScene />
+        <Work />
+        <WhyIBuild />
+        <CityMap />
+        <Experience />
+        <About />
+        <Contact />
+      </main>
+      <Footer />
+    </LazyMotion>
   );
 }
 
-export default App
+export default App;

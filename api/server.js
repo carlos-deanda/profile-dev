@@ -8,7 +8,7 @@ const handler = async (req, res) => {
   }
 
   try {
-    const { name, message, email } = req.body;
+    const { message } = req.body;
 
     const data = await resend.emails.send({
       from: 'Acme <onboarding@resend.dev>',
