@@ -1,5 +1,6 @@
-import { Container, SectionTitle, Eyebrow } from './ui';
-import { skills } from '../data/profile';
+import { Container, SectionTitle, Eyebrow, TrackLabel } from './ui';
+import Reveal from './Reveal';
+import { about, skills, tracks } from '../data/profile';
 import photo from '../assets/carlos.webp';
 
 function Chips({ items }) {
@@ -18,25 +19,28 @@ export default function About() {
   return (
     <section id="about" className="bg-mist py-24 md:py-30">
       <Container className="flex flex-wrap gap-14">
-        <div className="flex flex-[1_1_420px] flex-col gap-6">
-          <SectionTitle>About me.</SectionTitle>
+        <Reveal className="flex flex-[1_1_420px] flex-col gap-6">
+          <div className="flex flex-col gap-3.5">
+            <TrackLabel track={tracks.about} />
+            <SectionTitle>About me.</SectionTitle>
+          </div>
           <img
             src={photo}
             alt="Carlos de Anda"
             className="aspect-[4/3] w-full max-w-[520px] rounded-3xl object-cover object-[60%_40%]"
             loading="lazy"
           />
-          {/* TODO: write these two paragraphs in your own voice */}
-          <p className="text-[21px] leading-normal text-ink-2">
-            [Your story: why engineering, what you care about, and what you’re looking for next, e.g.
-            a 2027 software engineering internship.]
+          <p className="text-[clamp(24px,3vw,30px)] leading-tight font-semibold tracking-[-0.02em]">
+            {about.question}
           </p>
-          <p className="text-[21px] leading-normal text-ink-2">
-            [A human detail: music, tennis, whatever makes you you.]
-          </p>
-        </div>
+          {about.paragraphs.map((text) => (
+            <p key={text} className="text-[21px] leading-normal text-ink-2">
+              {text}
+            </p>
+          ))}
+        </Reveal>
 
-        <div className="flex flex-[1_1_360px] flex-col gap-8 md:pt-[88px]">
+        <Reveal delay={0.1} className="flex flex-[1_1_360px] flex-col gap-8 md:pt-[88px]">
           <div className="flex flex-col gap-3">
             <Eyebrow>Languages</Eyebrow>
             <Chips items={skills.languages} />
@@ -56,7 +60,7 @@ export default function About() {
             <Eyebrow>Speaks</Eyebrow>
             <p className="text-[17px] leading-normal text-ink-2">{skills.spoken}</p>
           </div>
-        </div>
+        </Reveal>
       </Container>
     </section>
   );

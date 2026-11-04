@@ -10,9 +10,16 @@
   --color-mist: #f5f5f7;
   --color-placeholder: #e8e8ed;
 
+  /* Dark sections (hero, contact). The wine accent is too dark on near-black (2.4:1),
+     so dark sections use lighter tints that measure AA on --color-night. */
+  --color-night: #0b0b0d;
+  --color-accent-on-dark: #e8607f;
+  --color-accent-on-dark-hover: #f0768f;
+  --color-muted-on-dark: #a1a1a6;
+
   /* One accent for the whole site. Change it here. */
-  --color-accent: #0062c4;
-  --color-accent-hover: #004a94;
+  --color-accent: #9b1c3a;
+  --color-accent-hover: #7a1530;
 }
 
 @layer base {
