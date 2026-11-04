@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Stats from './components/Stats';
 import LeapScene from './components/LeapScene';
+import ClimaxScene from './components/ClimaxScene';
 import Work from './components/Work';
 import WhyIBuild from './components/WhyIBuild';
 import CityMap from './components/CityMap';
@@ -20,6 +21,7 @@ function App() {
         <Hero />
         <Stats />
         <LeapScene />
+        <ClimaxScene />
         <Work />
         <WhyIBuild />
         <CityMap />

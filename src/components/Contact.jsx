@@ -1,5 +1,6 @@
 import { Container, PillLink, TextLink, TrackLabel } from './ui';
 import Reveal from './Reveal';
+import EqEcho from './EqEcho';
 import { contact, tracks } from '../data/profile';
 
 export default function Contact() {
@@ -17,6 +18,7 @@ export default function Contact() {
           <h2 className="text-[clamp(44px,6vw,80px)] leading-[1.03] font-bold tracking-[-0.035em]">
             Let’s build something.
           </h2>
+          <EqEcho />
           <p className="max-w-[560px] text-[21px] leading-[1.45] text-muted-on-dark">
             Open to software engineering internships for 2027. The fastest way to reach me is email.
           </p>

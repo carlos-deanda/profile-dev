@@ -37,8 +37,37 @@
   }
 }
 
+/* Equalizer echo under section titles (see EqEcho.jsx). Only transform animates. */
+.eq-echo {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 22px;
+}
+
+.eq-echo > span {
+  width: 4px;
+  border-radius: 2px;
+  background: var(--eq-color);
+  transform-origin: bottom;
+  animation: eq-bounce var(--eq-duration) ease-in-out var(--eq-delay) infinite alternate;
+}
+
+@keyframes eq-bounce {
+  from {
+    transform: scaleY(0.3);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .eq-echo > span {
+    animation: none;
   }
 }
