@@ -196,13 +196,20 @@ function Line({ style }) {
   );
 }
 
+// When the timeline runs. Desktop: while the scene is pinned. Phones: from the moment the
+// scene enters until its bottom reaches mid-screen, so the keys are already fading in as it
+// slides up and the fade-out happens while it leaves, instead of a screen of empty black at
+// each end. The scene is pinned from about 0.29 to 0.86 of that range.
+const DESKTOP_OFFSET = ['start start', 'end end'];
+const PHONE_OFFSET = ['start end', 'end 0.5'];
+
 function PinnedClimax({ light }) {
   const sectionRef = useRef(null);
   const stageRef = useRef(null);
   const canvasRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ['start start', 'end end'],
+    offset: light ? PHONE_OFFSET : DESKTOP_OFFSET,
   });
   const sound = useClimaxSound(stageRef);
   const { stateRef, engineRef, mutedRef } = sound;
