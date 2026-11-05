@@ -71,14 +71,14 @@ export function PillLink({ href, children, variant = 'solid', dark = false, clas
 }
 
 export function TextLink({ href, children, dark = false }) {
-  const external = href.startsWith('http');
+  const newTab = href.startsWith('http') || href.endsWith('.pdf');
   return (
     <a
       href={href}
       className={`hover:underline ${
         dark ? 'text-accent-on-dark hover:text-accent-on-dark-hover' : ''
       }`}
-      {...(external ? { target: '_blank', rel: 'noreferrer' } : {})}
+      {...(newTab ? { target: '_blank', rel: 'noreferrer' } : {})}
     >
       {children} ›
     </a>

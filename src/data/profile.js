@@ -11,8 +11,8 @@ import voluntappFinish from '../assets/voluntapp/5-finish.webp';
 export const contact = {
   email: 'carlosfelipedeanda@gmail.com',
   github: 'https://github.com/carlos-deanda',
-  linkedin: '', // TODO: paste your LinkedIn URL
-  resume: '', // TODO: put your CV in /public (e.g. /Carlos_de_Anda_Resume.pdf) and set the path here
+  linkedin: 'https://www.linkedin.com/in/carlos-de-anda/',
+  resume: '/Carlos_de_Anda_Resume.pdf',
 };
 
 export const stats = [
