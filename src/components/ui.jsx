@@ -84,13 +84,3 @@ export function TextLink({ href, children, dark = false }) {
     </a>
   );
 }
-
-export function ImagePlaceholder({ label, className = '' }) {
-  return (
-    <div
-      className={`flex items-center justify-center bg-placeholder p-6 text-center text-sm text-muted ${className}`}
-    >
-      [{label}]
-    </div>
-  );
-}

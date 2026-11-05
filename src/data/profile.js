@@ -1,5 +1,7 @@
 // Everything on the site that isn't layout lives here.
 // To add a project, add an object to `projects`; it shows up in its group automatically.
+// Projects without `image` show as text-only cards. To add a screenshot later, import it like
+// the photos above and set `image` and `imageAlt`. `wide: true` makes a card take a full row.
 
 import smartMirrorTeam from '../assets/smart-mirror-team.webp';
 import voluntappCreate from '../assets/voluntapp/1-create.webp';
@@ -45,7 +47,6 @@ export const projects = [
     myPart:
       'started the project and built the home, the live map, the queue system, notifications and the customer dashboard.',
     stack: ['React', 'Tailwind', 'Express', 'Socket.io', 'PostgreSQL', 'JWT'],
-    imageLabel: 'Chefsito screenshot',
     links: [
       { label: 'Watch demo', href: 'https://www.youtube.com/watch?v=G8BBqBVzlAM' },
       { label: 'GitHub', href: 'https://github.com/carlos-deanda/chefsito' },
@@ -60,7 +61,6 @@ export const projects = [
     myPart:
       'the first working extension, price detection, the checkout flow and the notification system.',
     stack: ['React', 'Chrome Extensions (MV3)', 'Express', 'PostgreSQL'],
-    imageLabel: 'Widget on Amazon screenshot',
     links: [{ label: 'GitHub', href: 'https://github.com/carlos-deanda/widget-kueski' }],
   },
   {
@@ -81,7 +81,26 @@ export const projects = [
     description:
       'End-to-end network for a 6-story building with 3,200+ concurrent users: 13 VLANs, a VLSM addressing plan, Cisco Catalyst hardware and 150+ Wi-Fi 6 APs, validated in Packet Tracer and a physical proof of concept.',
     stack: ['Cisco IOS', 'VLSM', 'VLANs', 'Wi-Fi 6'],
-    imageLabel: 'Network topology diagram',
+    wide: true,
+    // Simplified, from the project's real figures. It shows the layers, not the exact topology.
+    diagram: {
+      label: 'Network layers, from the internet connection down to the users',
+      layers: [
+        { label: 'WAN', detail: '1.5 Gbps (estimated)' },
+        { label: 'Core router', detail: 'Cisco Catalyst C8300' },
+        { label: 'Core switch', detail: 'Catalyst C9500' },
+        { label: 'Access switches', detail: 'Catalyst C9300 · UPOE / mGig' },
+      ],
+      vlans: {
+        label: '13 VLANs · 172.24.0.0/18 (VLSM)',
+        services: ['Wi-Fi', 'IoT', 'Security', 'BMS', 'VoIP'],
+      },
+      edge: [
+        { label: 'Access points', detail: '150+ Wi-Fi 6' },
+        { label: 'Users', detail: '3,200+ concurrent' },
+      ],
+      caption: 'Simplified diagram.',
+    },
     links: [],
   },
   {
@@ -92,7 +111,7 @@ export const projects = [
       'Robotec’s lunar rover prototype, 3rd place nationally at the Mexican Robotics Tournament.',
     myPart: 'Bluetooth wheel control, PWM motor control and the AS5600 magnetic-encoder controller.',
     stack: ['Python', 'Arduino', 'PWM', 'AS5600 encoders', 'Bluetooth'],
-    imageLabel: 'Rover photo',
+    wide: true,
     links: [{ label: 'GitHub', href: 'https://github.com/Sesgaro/Robert_RoboTec' }],
   },
 ];
