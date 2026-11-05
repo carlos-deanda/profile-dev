@@ -168,7 +168,7 @@ export default function Work() {
           <TrackLabel track={tracks.work} />
           <SectionTitle>Selected work.</SectionTitle>
           <p className="max-w-[620px] text-[21px] leading-[1.45] text-muted">
-            Hardware, software and networks: projects where I owned the system from end to end.
+            Hardware, software and networks: team projects, and the parts I built in each.
           </p>
         </Reveal>
       </Container>

@@ -203,7 +203,7 @@ export const why = {
   items: [
     {
       name: 'VoluntApp',
-      text: 'An Android app for the staff of Banco de Alimentos (BAMX) Guadalajara to manage volunteers, activities, attendance and hours. I helped build different parts of it, including its screens.',
+      text: 'An Android app for the staff of Banco de Alimentos (BAMX) Guadalajara. I helped build it; you can see it in Work.',
     },
     {
       name: 'WeCareClub',
@@ -211,7 +211,7 @@ export const why = {
     },
     {
       name: 'FETEC',
-      text: 'As Vice President, I represent 5,000+ students at Campus Guadalajara.',
+      text: 'As Vice President, I represent the students of Campus Guadalajara.',
     },
   ],
 };
@@ -229,7 +229,7 @@ export const footer = {
   },
 };
 
-// Scroll scene between the stats and the work. Same words as `about`, split into three beats.
+// Scroll scene after the work: the story in three beats. `about` keeps only the lines not shown here.
 export const leap = {
   eyebrow: 'Leap of faith',
   sectionLabel: 'How I got here',
@@ -270,7 +270,7 @@ export const places = {
       area: 'Zapopan',
       summary: 'Where I study Computer Science and where I do most of my projects right now.',
       points: [
-        'FETEC Vice President: representing 5,000+ students.',
+        'FETEC Vice President.',
         'Tec Ambassador: representing Campus Guadalajara at institutional events.',
         'Smart Mirror System: 1st place at Expo Ingenierías 2026.',
       ],
@@ -285,7 +285,6 @@ export const places = {
       summary: 'VoluntApp, an Android app built for BAMX Guadalajara’s staff to manage volunteers.',
       points: [
         'I helped build different parts of the app, including its screens.',
-        'The app manages volunteers, activities, attendance and hours.',
       ],
       coords: { lat: 20.5972, lng: -103.3927 },
       labelSide: 'right',
@@ -319,8 +318,7 @@ export const about = {
   question: 'What is a leap of faith?',
   paragraphs: [
     'It’s daring to move forward even when you don’t have the whole path figured out. The bigger the challenge, the more confidence in yourself it takes.',
-    'A leap of faith doesn’t mean having all the answers. It means believing enough in what you want to build to take the first step, even when you don’t yet know where it will lead. Some things you simply can’t understand until you decide to live them.',
-    'At 17, I had to choose between studying music production and engineering. I chose Computer Technologies Engineering. I still play piano and ukulele, but computing is my passion, and combining both is my dream.',
+    'Some things you simply can’t understand until you decide to live them.',
   ],
 };
 
