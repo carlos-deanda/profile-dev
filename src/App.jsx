@@ -20,9 +20,9 @@ function App() {
       <main>
         <Hero />
         <Stats />
+        <Work />
         <LeapScene />
         <ClimaxScene />
-        <Work />
         <WhyIBuild />
         <CityMap />
         <Experience />
