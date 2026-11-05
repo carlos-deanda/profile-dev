@@ -4,7 +4,8 @@ import * as M from 'motion/react-m';
 import useScrollMotion from '../hooks/useScrollMotion';
 import Reveal from './Reveal';
 import VoluntAppDemo from './VoluntAppDemo';
-import { Container, SectionTitle, Eyebrow, TextLink, ImagePlaceholder, TrackLabel } from './ui';
+import NetworkDiagram from './NetworkDiagram';
+import { Container, SectionTitle, Eyebrow, TextLink, TrackLabel } from './ui';
 import { featured, projects, projectGroups, tracks } from '../data/profile';
 
 function Stack({ items }) {
@@ -100,11 +101,25 @@ function FeaturedProject() {
   );
 }
 
-function DemoProjectCard({ project }) {
+function Links({ links, className = '' }) {
+  if (links.length === 0) return null;
+  return (
+    <div className={`flex flex-wrap gap-5 pt-1 text-base ${className}`}>
+      {links.map((l) => (
+        <TextLink key={l.href} href={l.href}>
+          {l.label}
+        </TextLink>
+      ))}
+    </div>
+  );
+}
+
+// Full-row card with a visual on one side: the VoluntApp demo or the network diagram.
+function VisualProjectCard({ project, children }) {
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-3xl bg-white md:flex-row">
-      <div className="flex shrink-0 justify-center bg-[#efeff2] px-6 py-10 md:w-[46%]">
-        <VoluntAppDemo />
+      <div className="flex shrink-0 items-center justify-center bg-[#efeff2] px-6 py-10 md:w-[46%]">
+        {children}
       </div>
       <div className="flex grow flex-col gap-3 p-7 md:justify-center md:p-12">
         <p className="text-[13px] font-semibold text-muted">{project.eyebrow}</p>
@@ -112,33 +127,54 @@ function DemoProjectCard({ project }) {
         <p className="text-[17px] leading-normal text-ink-2">{project.description}</p>
         {project.myPart && <MyPart>{project.myPart}</MyPart>}
         <Stack items={project.stack} />
-        {project.links.length > 0 && (
-          <div className="flex flex-wrap gap-5 pt-1 text-base">
-            {project.links.map((l) => (
-              <TextLink key={l.href} href={l.href}>
-                {l.label}
-              </TextLink>
-            ))}
-          </div>
-        )}
+        <Links links={project.links} />
+      </div>
+    </article>
+  );
+}
+
+// Full-row card without a visual: the text splits into two columns on wide screens,
+// like the featured project.
+function WideTextCard({ project }) {
+  return (
+    <article className="flex flex-wrap gap-x-14 gap-y-4 rounded-3xl bg-white p-7 md:p-12">
+      <div className="flex flex-[1_1_340px] flex-col gap-3">
+        <p className="text-[13px] font-semibold text-muted">{project.eyebrow}</p>
+        <h4 className="text-[32px] leading-tight font-bold tracking-[-0.02em]">{project.title}</h4>
+        <p className="text-[17px] leading-normal text-ink-2">{project.description}</p>
+      </div>
+      <div className="flex flex-[1_1_340px] flex-col justify-end gap-3">
+        {project.myPart && <MyPart>{project.myPart}</MyPart>}
+        <Stack items={project.stack} />
+        <Links links={project.links} />
       </div>
     </article>
   );
 }
 
 function ProjectCard({ project }) {
-  if (project.demo === 'voluntapp') return <DemoProjectCard project={project} />;
+  if (project.demo === 'voluntapp')
+    return (
+      <VisualProjectCard project={project}>
+        <VoluntAppDemo />
+      </VisualProjectCard>
+    );
+  if (project.diagram)
+    return (
+      <VisualProjectCard project={project}>
+        <NetworkDiagram diagram={project.diagram} />
+      </VisualProjectCard>
+    );
+  if (project.wide && !project.image) return <WideTextCard project={project} />;
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-3xl bg-white">
-      {project.image ? (
+      {project.image && (
         <img
           src={project.image}
           alt={project.imageAlt ?? ''}
           className="h-[220px] w-full object-cover"
           loading="lazy"
         />
-      ) : (
-        <ImagePlaceholder label={project.imageLabel} className="h-[220px]" />
       )}
       <div className="flex grow flex-col gap-3 p-7">
         <p className="text-[13px] font-semibold text-muted">{project.eyebrow}</p>
@@ -146,15 +182,7 @@ function ProjectCard({ project }) {
         <p className="text-base leading-normal text-ink-2">{project.description}</p>
         {project.myPart && <MyPart>{project.myPart}</MyPart>}
         <Stack items={project.stack} />
-        {project.links.length > 0 && (
-          <div className="mt-auto flex flex-wrap gap-5 pt-1 text-base">
-            {project.links.map((l) => (
-              <TextLink key={l.href} href={l.href}>
-                {l.label}
-              </TextLink>
-            ))}
-          </div>
-        )}
+        <Links links={project.links} className="mt-auto" />
       </div>
     </article>
   );
@@ -168,7 +196,7 @@ export default function Work() {
           <TrackLabel track={tracks.work} />
           <SectionTitle>Selected work.</SectionTitle>
           <p className="max-w-[620px] text-[21px] leading-[1.45] text-muted">
-            Hardware, software and networks: projects where I owned the system from end to end.
+            Hardware, software and networks: team projects, and the parts I built in each.
           </p>
         </Reveal>
       </Container>
@@ -178,25 +206,18 @@ export default function Work() {
       <Container className="flex flex-col gap-14">
         {projectGroups.map((group) => {
           const items = projects.filter((p) => p.group === group.id);
-          // A group with a demo card uses two columns so the wide demo can take its own row.
-          const hasDemo = items.some((p) => p.demo);
           return (
             <div key={group.id} className="flex flex-col gap-6">
               <Reveal>
                 <h3 className="mt-4 text-[28px] font-bold tracking-[-0.02em]">{group.title}</h3>
               </Reveal>
-              <div
-                className={`grid gap-6 ${
-                  hasDemo
-                    ? 'grid-cols-1 md:grid-cols-2'
-                    : 'grid-cols-[repeat(auto-fit,minmax(300px,1fr))]'
-                }`}
-              >
+              {/* Two columns; the demo, the diagram and `wide` cards take a full row. */}
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 {items.map((p, i) => (
                   <Reveal
                     key={p.title}
                     delay={(i % 3) * 0.08}
-                    className={`h-full ${p.demo ? 'md:col-span-2' : ''}`}
+                    className={`h-full ${p.demo || p.diagram || p.wide ? 'md:col-span-2' : ''}`}
                   >
                     <ProjectCard project={p} />
                   </Reveal>

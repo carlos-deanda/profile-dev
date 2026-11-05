@@ -1,5 +1,7 @@
 // Everything on the site that isn't layout lives here.
 // To add a project, add an object to `projects`; it shows up in its group automatically.
+// Projects without `image` show as text-only cards. To add a screenshot later, import it like
+// the photos above and set `image` and `imageAlt`. `wide: true` makes a card take a full row.
 
 import smartMirrorTeam from '../assets/smart-mirror-team.webp';
 import voluntappCreate from '../assets/voluntapp/1-create.webp';
@@ -11,8 +13,8 @@ import voluntappFinish from '../assets/voluntapp/5-finish.webp';
 export const contact = {
   email: 'carlosfelipedeanda@gmail.com',
   github: 'https://github.com/carlos-deanda',
-  linkedin: '', // TODO: paste your LinkedIn URL
-  resume: '', // TODO: put your CV in /public (e.g. /Carlos_de_Anda_Resume.pdf) and set the path here
+  linkedin: 'https://www.linkedin.com/in/carlos-de-anda/',
+  resume: '/Carlos_de_Anda_Resume.pdf',
 };
 
 export const stats = [
@@ -45,7 +47,6 @@ export const projects = [
     myPart:
       'started the project and built the home, the live map, the queue system, notifications and the customer dashboard.',
     stack: ['React', 'Tailwind', 'Express', 'Socket.io', 'PostgreSQL', 'JWT'],
-    imageLabel: 'Chefsito screenshot',
     links: [
       { label: 'Watch demo', href: 'https://www.youtube.com/watch?v=G8BBqBVzlAM' },
       { label: 'GitHub', href: 'https://github.com/carlos-deanda/chefsito' },
@@ -60,7 +61,6 @@ export const projects = [
     myPart:
       'the first working extension, price detection, the checkout flow and the notification system.',
     stack: ['React', 'Chrome Extensions (MV3)', 'Express', 'PostgreSQL'],
-    imageLabel: 'Widget on Amazon screenshot',
     links: [{ label: 'GitHub', href: 'https://github.com/carlos-deanda/widget-kueski' }],
   },
   {
@@ -81,7 +81,26 @@ export const projects = [
     description:
       'End-to-end network for a 6-story building with 3,200+ concurrent users: 13 VLANs, a VLSM addressing plan, Cisco Catalyst hardware and 150+ Wi-Fi 6 APs, validated in Packet Tracer and a physical proof of concept.',
     stack: ['Cisco IOS', 'VLSM', 'VLANs', 'Wi-Fi 6'],
-    imageLabel: 'Network topology diagram',
+    wide: true,
+    // Simplified, from the project's real figures. It shows the layers, not the exact topology.
+    diagram: {
+      label: 'Network layers, from the internet connection down to the users',
+      layers: [
+        { label: 'WAN', detail: '1.5 Gbps (estimated)' },
+        { label: 'Core router', detail: 'Cisco Catalyst C8300' },
+        { label: 'Core switch', detail: 'Catalyst C9500' },
+        { label: 'Access switches', detail: 'Catalyst C9300 · UPOE / mGig' },
+      ],
+      vlans: {
+        label: '13 VLANs · 172.24.0.0/18 (VLSM)',
+        services: ['Wi-Fi', 'IoT', 'Security', 'BMS', 'VoIP'],
+      },
+      edge: [
+        { label: 'Access points', detail: '150+ Wi-Fi 6' },
+        { label: 'Users', detail: '3,200+ concurrent' },
+      ],
+      caption: 'Simplified diagram.',
+    },
     links: [],
   },
   {
@@ -92,7 +111,7 @@ export const projects = [
       'Robotec’s lunar rover prototype, 3rd place nationally at the Mexican Robotics Tournament.',
     myPart: 'Bluetooth wheel control, PWM motor control and the AS5600 magnetic-encoder controller.',
     stack: ['Python', 'Arduino', 'PWM', 'AS5600 encoders', 'Bluetooth'],
-    imageLabel: 'Rover photo',
+    wide: true,
     links: [{ label: 'GitHub', href: 'https://github.com/Sesgaro/Robert_RoboTec' }],
   },
 ];
@@ -203,7 +222,7 @@ export const why = {
   items: [
     {
       name: 'VoluntApp',
-      text: 'An Android app for the staff of Banco de Alimentos (BAMX) Guadalajara to manage volunteers, activities, attendance and hours. I helped build different parts of it, including its screens.',
+      text: 'An Android app for the staff of Banco de Alimentos (BAMX) Guadalajara. I helped build it; you can see it in Work.',
     },
     {
       name: 'WeCareClub',
@@ -211,7 +230,7 @@ export const why = {
     },
     {
       name: 'FETEC',
-      text: 'As Vice President, I represent 5,000+ students at Campus Guadalajara.',
+      text: 'As Vice President, I represent the students of Campus Guadalajara.',
     },
   ],
 };
@@ -229,7 +248,7 @@ export const footer = {
   },
 };
 
-// Scroll scene between the stats and the work. Same words as `about`, split into three beats.
+// Scroll scene after the work: the story in three beats. `about` keeps only the lines not shown here.
 export const leap = {
   eyebrow: 'Leap of faith',
   sectionLabel: 'How I got here',
@@ -270,7 +289,7 @@ export const places = {
       area: 'Zapopan',
       summary: 'Where I study Computer Science and where I do most of my projects right now.',
       points: [
-        'FETEC Vice President: representing 5,000+ students.',
+        'FETEC Vice President.',
         'Tec Ambassador: representing Campus Guadalajara at institutional events.',
         'Smart Mirror System: 1st place at Expo Ingenierías 2026.',
       ],
@@ -285,7 +304,6 @@ export const places = {
       summary: 'VoluntApp, an Android app built for BAMX Guadalajara’s staff to manage volunteers.',
       points: [
         'I helped build different parts of the app, including its screens.',
-        'The app manages volunteers, activities, attendance and hours.',
       ],
       coords: { lat: 20.5972, lng: -103.3927 },
       labelSide: 'right',
@@ -319,8 +337,7 @@ export const about = {
   question: 'What is a leap of faith?',
   paragraphs: [
     'It’s daring to move forward even when you don’t have the whole path figured out. The bigger the challenge, the more confidence in yourself it takes.',
-    'A leap of faith doesn’t mean having all the answers. It means believing enough in what you want to build to take the first step, even when you don’t yet know where it will lead. Some things you simply can’t understand until you decide to live them.',
-    'At 17, I had to choose between studying music production and engineering. I chose Computer Technologies Engineering. I still play piano and ukulele, but computing is my passion, and combining both is my dream.',
+    'Some things you simply can’t understand until you decide to live them.',
   ],
 };
 
