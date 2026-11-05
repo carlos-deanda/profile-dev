@@ -2,6 +2,11 @@
 // To add a project, add an object to `projects`; it shows up in its group automatically.
 
 import smartMirrorTeam from '../assets/smart-mirror-team.webp';
+import voluntappCreate from '../assets/voluntapp/1-create.webp';
+import voluntappPublish from '../assets/voluntapp/2-publish.webp';
+import voluntappAssign from '../assets/voluntapp/3-assign.webp';
+import voluntappAttendance from '../assets/voluntapp/4-attendance.webp';
+import voluntappFinish from '../assets/voluntapp/5-finish.webp';
 
 export const contact = {
   email: 'carlosfelipedeanda@gmail.com',
@@ -63,9 +68,8 @@ export const projects = [
     eyebrow: 'Mobile · Social impact · Fall 2026',
     title: 'VoluntApp',
     description:
-      'An Android app for Banco de Alimentos (BAMX) to manage volunteers, activities, attendance and hours.',
-    myPart:
-      'turned the Figma designs into the volunteer screens: activity offers, sign-up, QR check-in and profile.',
+      'An Android app for the staff of Banco de Alimentos (BAMX) Guadalajara. They register volunteers, create activities, assign people, take attendance and get hour reports.',
+    myPart: 'helped build different parts of the app, including its screens.',
     stack: ['React Native', 'Expo', 'TypeScript', 'Express', 'MongoDB'],
     demo: 'voluntapp',
     links: [{ label: 'GitHub', href: 'https://github.com/Guillermo-dlti/voluntapp' }],
@@ -93,59 +97,53 @@ export const projects = [
   },
 ];
 
-// Interactive VoluntApp demo (volunteer flow). Everything here is made-up sample data,
-// and the screens say so. No BAMX logos, no real people, dates or places.
-export const voluntappDemo = {
-  groupLabel: 'VoluntApp volunteer flow, interactive demo with sample data',
-  caption: 'Interactive demo with sample data. Tap through the volunteer flow.',
-  badge: 'Sample data',
+// VoluntApp: the five steps of an activity, shown with the app's real screens (cut from the
+// team's final presentation). The data on them is test data. The app is for BAMX staff:
+// volunteers do not sign in, the staff registers and assigns them.
+export const voluntappFlow = {
+  groupLabel: 'VoluntApp: the five steps of an activity, shown with screens from the app',
+  caption: 'Real screens from the final app, with test data.',
+  stepsLabel: 'Steps of an activity',
   back: 'Back',
-  stepsLabel: 'Demo steps',
-  steps: ['Offers', 'Details', 'Sign up', 'Check-in'],
-  offers: { title: 'Activities', hint: 'Choose an activity', spotsLeft: 'spots left' },
-  activities: [
+  next: 'Next',
+  restart: 'Start over',
+  steps: [
     {
-      id: 'sorting',
-      title: 'Food sorting',
-      when: 'Sat · 9:00 am',
-      place: 'Main warehouse',
-      spots: 12,
-      hours: 4,
-      description: 'Sort and check donated food before it is packed.',
+      label: 'Create',
+      title: 'Create the activity',
+      text: 'Staff save it as a draft: name, place, capacity and schedule.',
+      image: voluntappCreate,
+      alt: 'VoluntApp screen "Nueva actividad": a form with the activity name, place, capacity and schedule.',
     },
     {
-      id: 'packing',
-      title: 'Pantry packing',
-      when: 'Sun · 10:00 am',
-      place: 'Main warehouse',
-      spots: 5,
-      hours: 3,
-      description: 'Pack pantry boxes for delivery to partner communities.',
+      label: 'Publish',
+      title: 'Publish it and follow it',
+      text: 'Once published it can receive people. The activity page shows its details and its stage: draft, published, attendance or finished.',
+      image: voluntappPublish,
+      alt: 'VoluntApp screen of the activity "Colecta en supermercados", with its progress bar from draft to finished, its schedule, place and a "Finalizar asistencia" button.',
     },
     {
-      id: 'drive',
-      title: 'Collection drive',
-      when: 'Next Sat · 8:00 am',
-      place: 'Partner site',
-      spots: 20,
-      hours: 5,
-      description: 'Help receive and register donations at a collection point.',
+      label: 'Assign',
+      title: 'Assign volunteers',
+      text: 'Staff assign people to the activity. The app does not let the capacity be exceeded or one person be in two activities at the same time.',
+      image: voluntappAssign,
+      alt: 'VoluntApp screen "Asignar voluntario": a searchable list of active volunteers, with those already assigned marked.',
+    },
+    {
+      label: 'Attendance',
+      title: 'Take attendance',
+      text: 'One tap per person: present, late or absent, or everyone present at once. By hand or by scanning the volunteer’s QR card.',
+      image: voluntappAttendance,
+      alt: 'VoluntApp attendance screen with a Present, Late and Absent choice per volunteer, a scan button and a "Finalizar asistencia" button.',
+    },
+    {
+      label: 'Finish',
+      title: 'Finish the activity',
+      text: 'When attendance is closed, the hours count in each volunteer’s profile and in the reports.',
+      image: voluntappFinish,
+      alt: 'VoluntApp screen of a finished activity: "Asistencia finalizada, 20 h contadas" with the list of volunteers marked present.',
     },
   ],
-  detail: { when: 'When', where: 'Where', hours: 'Hours', spots: 'Spots', cta: 'Sign up' },
-  signup: {
-    title: 'Confirm sign-up',
-    volunteerLabel: 'Volunteer',
-    volunteer: 'Sample Volunteer',
-    cta: 'Confirm',
-  },
-  checkin: {
-    title: 'You’re signed up',
-    hint: 'Show this code at check-in.',
-    qrLabel: 'Sample QR code, not scannable',
-    qrCaption: 'Sample code',
-    done: 'Done',
-  },
 };
 
 export const projectGroups = [
@@ -205,7 +203,7 @@ export const why = {
   items: [
     {
       name: 'VoluntApp',
-      text: 'An Android app for Banco de Alimentos (BAMX) Guadalajara to manage volunteers, activities, attendance and hours. I built the volunteer screens.',
+      text: 'An Android app for the staff of Banco de Alimentos (BAMX) Guadalajara to manage volunteers, activities, attendance and hours. I helped build different parts of it, including its screens.',
     },
     {
       name: 'WeCareClub',
@@ -284,9 +282,9 @@ export const places = {
       short: 'BAMX GDL',
       name: 'Banco de Alimentos (BAMX) Guadalajara',
       area: 'Tlaquepaque',
-      summary: 'VoluntApp, the Android app for BAMX Guadalajara’s volunteers.',
+      summary: 'VoluntApp, an Android app built for BAMX Guadalajara’s staff to manage volunteers.',
       points: [
-        'I built the volunteer screens: activity offers, sign-up, QR check-in and profile.',
+        'I helped build different parts of the app, including its screens.',
         'The app manages volunteers, activities, attendance and hours.',
       ],
       coords: { lat: 20.5972, lng: -103.3927 },
