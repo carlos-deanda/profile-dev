@@ -43,6 +43,8 @@ export default function VoluntAppDemo() {
             <img
               key={s.label}
               src={s.image}
+              srcSet={`${s.imageSmall} 250w, ${s.image} 500w`}
+              sizes="236px"
               alt={s.alt}
               width={SHOT_WIDTH}
               height={SHOT_HEIGHT}

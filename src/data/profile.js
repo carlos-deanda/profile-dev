@@ -4,11 +4,17 @@
 // the photos above and set `image` and `imageAlt`. `wide: true` makes a card take a full row.
 
 import smartMirrorTeam from '../assets/smart-mirror-team.webp';
+import smartMirrorTeam700 from '../assets/smart-mirror-team-700.webp';
 import voluntappCreate from '../assets/voluntapp/1-create.webp';
+import voluntappCreateSmall from '../assets/voluntapp/1-create-250.webp';
 import voluntappPublish from '../assets/voluntapp/2-publish.webp';
+import voluntappPublishSmall from '../assets/voluntapp/2-publish-250.webp';
 import voluntappAssign from '../assets/voluntapp/3-assign.webp';
+import voluntappAssignSmall from '../assets/voluntapp/3-assign-250.webp';
 import voluntappAttendance from '../assets/voluntapp/4-attendance.webp';
+import voluntappAttendanceSmall from '../assets/voluntapp/4-attendance-250.webp';
 import voluntappFinish from '../assets/voluntapp/5-finish.webp';
+import voluntappFinishSmall from '../assets/voluntapp/5-finish-250.webp';
 
 export const contact = {
   email: 'carlosfelipedeanda@gmail.com',
@@ -16,6 +22,13 @@ export const contact = {
   linkedin: 'https://www.linkedin.com/in/carlos-de-anda/',
   resume: '/Carlos_de_Anda_Resume.pdf',
 };
+
+// Shown at the top of the hero, so recruiters see it in the first seconds.
+// Two parts: one line each on phones, joined with " · " on wider screens.
+export const availability = [
+  'Seeking a Summer 2027 software engineering internship',
+  'Graduating June 2028',
+];
 
 export const stats = [
   { value: '1st', label: 'Place, Expo Ingenierías — Physical Prototype' },
@@ -33,6 +46,8 @@ export const featured = {
     'the physical build of the mirror, plus the dashboard widgets (weather, news, calendar, reminders, daily quote) and the news API behind them.',
   stack: ['Python', 'OpenCV', 'React', 'TypeScript', 'Node.js', 'MongoDB', 'IoT'],
   image: smartMirrorTeam,
+  // Phones get the 700px copy; wide screens the full 1100px photo.
+  imageSrcSet: `${smartMirrorTeam700} 700w, ${smartMirrorTeam} 1100w`,
   imageAlt: 'The Smart Mirror team holding the first-place certificate at Tecnológico de Monterrey',
   links: [{ label: 'GitHub', href: 'https://github.com/danihdz11/Smart-Mirror' }],
 };
@@ -132,6 +147,7 @@ export const voluntappFlow = {
       title: 'Create the activity',
       text: 'Staff save it as a draft: name, place, capacity and schedule.',
       image: voluntappCreate,
+      imageSmall: voluntappCreateSmall,
       alt: 'VoluntApp screen "Nueva actividad": a form with the activity name, place, capacity and schedule.',
     },
     {
@@ -139,6 +155,7 @@ export const voluntappFlow = {
       title: 'Publish it and follow it',
       text: 'Once published it can receive people. The activity page shows its details and its stage: draft, published, attendance or finished.',
       image: voluntappPublish,
+      imageSmall: voluntappPublishSmall,
       alt: 'VoluntApp screen of the activity "Colecta en supermercados", with its progress bar from draft to finished, its schedule, place and a "Finalizar asistencia" button.',
     },
     {
@@ -146,6 +163,7 @@ export const voluntappFlow = {
       title: 'Assign volunteers',
       text: 'Staff assign people to the activity. The app does not let the capacity be exceeded or one person be in two activities at the same time.',
       image: voluntappAssign,
+      imageSmall: voluntappAssignSmall,
       alt: 'VoluntApp screen "Asignar voluntario": a searchable list of active volunteers, with those already assigned marked.',
     },
     {
@@ -153,6 +171,7 @@ export const voluntappFlow = {
       title: 'Take attendance',
       text: 'One tap per person: present, late or absent, or everyone present at once. By hand or by scanning the volunteer’s QR card.',
       image: voluntappAttendance,
+      imageSmall: voluntappAttendanceSmall,
       alt: 'VoluntApp attendance screen with a Present, Late and Absent choice per volunteer, a scan button and a "Finalizar asistencia" button.',
     },
     {
@@ -160,6 +179,7 @@ export const voluntappFlow = {
       title: 'Finish the activity',
       text: 'When attendance is closed, the hours count in each volunteer’s profile and in the reports.',
       image: voluntappFinish,
+      imageSmall: voluntappFinishSmall,
       alt: 'VoluntApp screen of a finished activity: "Asistencia finalizada, 20 h contadas" with the list of volunteers marked present.',
     },
   ],

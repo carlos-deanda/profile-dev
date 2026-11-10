@@ -37,6 +37,8 @@ function GrowingImage() {
       >
         <M.img
           src={featured.image}
+          srcSet={featured.imageSrcSet}
+          sizes="(min-width: 1184px) 1120px, calc(100vw - 32px)"
           alt={featured.imageAlt}
           style={{ scale: photoScale }}
           className="h-full w-full object-cover object-[center_72%]"
@@ -52,6 +54,8 @@ function StaticImage() {
     <Container>
       <img
         src={featured.image}
+        srcSet={featured.imageSrcSet}
+        sizes="(min-width: 1168px) 1072px, calc(100vw - 48px)"
         alt={featured.imageAlt}
         className="aspect-[4/3] w-full rounded-[28px] object-cover object-[center_72%]"
         loading="lazy"

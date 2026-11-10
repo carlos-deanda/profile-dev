@@ -16,8 +16,15 @@ function App() {
   return (
     // `m` components get their renderer from LazyMotion; without it scroll values never reach the DOM.
     <LazyMotion features={domAnimation} strict>
+      {/* First stop for keyboard users: jumps past the menu. Visible only when focused. */}
+      <a
+        href="#main"
+        className="sr-only z-20 rounded-full bg-mist text-ink focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:px-5 focus:py-3"
+      >
+        Skip to content
+      </a>
       <Navbar />
-      <main>
+      <main id="main" tabIndex={-1} className="outline-none">
         <Hero />
         <Stats />
         <Work />

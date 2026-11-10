@@ -5,10 +5,11 @@ import Reveal from './Reveal';
 import { stats } from '../data/profile';
 
 // "5,000+" -> { target: 5000, decimals: 0, grouped: true, suffix: '+' }.
-// Anything else ("1st", "3rd": ordinals read wrong while counting) returns null and just fades in.
+// Anything else returns null and just fades in: ordinals ("1st", "3rd") read wrong while
+// counting, and decimals (the GPA) would flash values that aren't real, like 9.37.
 function parseStat(value) {
   const match = value.match(/^([\d,]+(?:\.(\d+))?)([+%]?)$/);
-  if (!match) return null;
+  if (!match || match[2]) return null;
   return {
     target: parseFloat(match[1].replace(/,/g, '')),
     decimals: match[2]?.length ?? 0,

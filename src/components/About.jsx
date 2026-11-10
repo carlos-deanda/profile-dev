@@ -2,6 +2,7 @@ import { Container, SectionTitle, Eyebrow, TrackLabel } from './ui';
 import Reveal from './Reveal';
 import { about, skills, tracks } from '../data/profile';
 import photo from '../assets/carlos.webp';
+import photo700 from '../assets/carlos-700.webp';
 
 function Chips({ items }) {
   return (
@@ -26,6 +27,8 @@ export default function About() {
           </div>
           <img
             src={photo}
+            srcSet={`${photo700} 700w, ${photo} 1000w`}
+            sizes="(min-width: 640px) 520px, calc(100vw - 48px)"
             alt="Carlos de Anda"
             className="aspect-[4/3] w-full max-w-[520px] rounded-3xl object-cover object-[60%_40%]"
             loading="lazy"

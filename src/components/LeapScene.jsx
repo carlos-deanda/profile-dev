@@ -150,7 +150,7 @@ function PinnedScene() {
   const progressBar = useTransform(p, [0, 1], [0, 1]);
 
   return (
-    <section ref={ref} aria-label={leap.sectionLabel} className="relative h-[300vh] bg-night text-mist">
+    <section ref={ref} aria-label={leap.sectionLabel} className="relative h-[200vh] bg-night text-mist">
       <div className="sticky top-0 flex h-screen flex-col justify-center pt-[52px]">
         <Container className="grid items-center gap-16 md:grid-cols-2">
           <div className="grid">

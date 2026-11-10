@@ -1,35 +1,338 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carlos de Anda — CS Student & Software Developer</title>
-    <meta
-      name="description"
-      content="Carlos de Anda, Computer Science student at Tecnológico de Monterrey. Full-stack, IoT and networking projects."
-    />
-    <meta property="og:title" content="Carlos de Anda — CS Student & Software Developer" />
-    <meta
-      property="og:description"
-      content="From the network to the interface. Full-stack, IoT and networking projects."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://profile-dev-weld.vercel.app/" />
-    <meta property="og:image" content="https://profile-dev-weld.vercel.app/og.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Carlos de Anda: From the network to the interface." />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<html lang="en" data-type="software" data-radius="soft" data-ground="sage" data-buttons="tonal" data-motion>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Carlos de Anda: CS student and full-stack developer in Guadalajara</title>
+<meta name="description" content="Computer Science student at Tecnológico de Monterrey who builds web apps like Chefsito and VoluntApp, IoT prototypes and campus networks. Looking for a Summer 2027 internship.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Carlos de Anda: CS student and full-stack developer in Guadalajara">
+<meta property="og:description" content="Web apps, IoT prototypes and campus networks from a Computer Science student at Tec de Monterrey.">
+<meta property="og:url" content="https://profile-dev-weld.vercel.app/">
+<meta property="og:image" content="https://profile-dev-weld.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Carlos de Anda, Computer Science student at Tecnológico de Monterrey">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://profile-dev-weld.vercel.app/">
+<meta name="site-kind" content="software">
+<meta name="page-type" content="software">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400..700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/system.css">
+<link rel="stylesheet" href="/assets/ui/cards.css">
+<link rel="stylesheet" href="/assets/motion/motion.css">
+<link rel="stylesheet" href="/assets/backgrounds/backgrounds.css">
+<link rel="stylesheet" href="/assets/layout/layout.css">
+<link rel="stylesheet" href="/assets/icons/icon.css">
+<style>
+:root {
+  --p-bg: #ffffff; --p-surface: #f4f4f4; --p-ink: #111111; --p-muted: #6b6b6b;
+  --p-accent: #1a4be0; --p-accent-ink: #ffffff; --p-action: #1a4be0; --p-action-ink: #ffffff;
+  --p-inv-bg: #111111; --p-inv-surface: #1e1e1e; --p-inv-ink: #ffffff; --p-inv-muted: #9a9a9a;
+  --p-inv-accent: #ffffff; --p-inv-accent-ink: #111111; --p-inv-action: #ffffff; --p-inv-action-ink: #111111;
+  --font-display: "Urbanist", system-ui, sans-serif;
+  --font-text: "Urbanist", system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --display-weight: 500;
+  --display-tracking: -0.03em;
+  --display-tracking-xl: -0.04em;
+}
+</style>
+<link rel="stylesheet" href="/assets/ui/base.css">
+<link rel="stylesheet" href="/assets/ui/integrations/fragment.css">
+<link rel="stylesheet" href="/assets/ui/checklist/fragment.css">
+<link rel="stylesheet" href="/assets/ui/notify/fragment.css">
+<link rel="stylesheet" href="/assets/diagrams/diagram.css">
+<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+<script src="/assets/backgrounds/backgrounds.js"></script>
+<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
+<link rel="modulepreload" href="/assets/moments/moments.js">
+<link rel="modulepreload" href="/assets/moments/lib.js">
+<link rel="modulepreload" href="/assets/moments/liquid-hover/moment.js">
+<!-- page CSS: inside visuals only (the collage pieces, the card panels, the phone screens) -->
+<style>
+  .nav__logo img { width: 28px; height: 28px; }
+  /* Smart Mirror: the system diagram gets the frame's full height */
+  #mirror .frame { aspect-ratio: auto; height: 600px; }
+  @media (max-width: 639px) { #mirror .frame { height: 360px; } }
+  /* VoluntApp: one real phone screen per tab, rising out of the frame's bottom */
+  #voluntapp .shot { position: absolute; left: 50%; top: 56px; width: 300px; transform: translateX(-50%); border-radius: 28px; background: #111; padding: 8px; box-shadow: 0 22px 48px -22px rgb(0 0 0 / .45); }
+  #voluntapp .shot img { display: block; width: 100%; height: auto; border-radius: 22px; }
+  #voluntapp .tabs { margin-bottom: var(--s-5); }
+  #voluntapp .tabpanel { min-height: 4.5em; }
+  #voluntapp .frame { aspect-ratio: auto; height: 640px; }
+  @media (max-width: 639px) { #voluntapp .frame { height: 420px; } }
+  @media (max-width: 639px) { #voluntapp .shot { width: 200px; top: 24px; } }
+  #projects .panel { --p-h: 300px; }
+  @media (max-width: 639px) { #projects .panel { --p-h: 200px; } }
+  /* About: the real marks of the languages and tools, on light tiles inside the lit frame */
+  #about .tools { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; align-content: center; height: 100%; }
+  #about .tools li { display: grid; justify-items: center; align-content: center; gap: 12px; min-height: 160px; padding: 24px 8px; background: #fff; border: 1px solid rgb(17 17 17 / .08); border-radius: var(--r-md); font: 500 14px/1.2 var(--font-mono); color: var(--ink); text-align: center; }
+  #about .tools img { height: 36px; width: auto; }
+  /* from 640 the tiles fill the section's content height, so it ends on its screen's line */
+  @media (min-width: 640px) { #about .wrap > .grid { flex: 1 1 auto; } #about .grid > .span-6 { height: 100%; } #about .tools { grid-auto-rows: 1fr; } }
+  @media (max-width: 639px) { #about .tools { padding: 16px; gap: 8px; } #about .tools li { padding: 12px 4px; } #about .tools img { height: 28px; } }
+  .close__word { font-size: clamp(32px, 11.2vw, 168px); line-height: 1.1; padding-top: 0.06em; }
+    /* Experience on a phone: the titles and dates only, the photograph wide, so it holds one screen */
+  @media (max-width: 639px) { #experience .rows p { display: none; } }
+  @media (max-width: 1023px) { #experience .frame--split { --ratio: 42%; } }
+  @media (max-width: 639px) { #experience .frame--split { --ratio: 72%; } }
+  @media (min-width: 640px) and (max-width: 1023px) {
+    #mirror .frame { height: 720px; }
+    .closing__links .grid > .span-6 { grid-column: 1 / -1; }
+    .closing__links .footer__col { grid-column: span 4; }
+  }
+  /* the tablet: each screen's card row runs down to that screen's foot, as the system does from 1024 */
+  @media (min-width: 640px) and (max-width: 1023px) {
+    #projects .wrap > .grid:last-child, #projects .group > .grid:last-child { align-self: stretch; flex: 1 1 auto; min-height: 0; }
+    #projects .card { display: flex; flex-direction: column; } #projects .card > .panel { flex: 1 1 auto; }
+  }
+  /* under 400px the bar keeps the logo mark, the button and the menu; the name stays for screen readers */
+  @media (max-width: 399px) { .nav__name { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; } }
+</style>
+</head>
+<body>
+<!-- type: software (a CS student's portfolio: page type software, site-kind software)
+     deal: hero split (triptych, dealt first, failed hero-lines with all three pairings), nav nav-centre, close close-word, footer footer-columns, rhythm space, buttons tonal,
+     mark ring (replaced by the owner's own CD logo), palette white-link-blue, type urbanist (instrument, the first, failed hero-lines on the split hero), grounds none
+     moments: liquid-hover on the hero's photograph (the split hero's own moment); letters-assemble dealt but not used (one moment beside the scene)
+     scene: none (dot-becomes-the-full-stop was dealt; its rest state failed the page's checks, and a scene is optional) -->
+<header class="nav nav--centre">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#top">Skip to content</a>
+    <a class="nav__logo" href="#top"><img src="/favicon.svg" alt="" width="28" height="28"><span class="nav__name">Carlos de Anda</span></a>
+    <nav class="nav__links" aria-label="Main">
+      <div class="nav__item"><a class="nav__link" href="#mirror">Work</a></div>
+      <div class="nav__item"><a class="nav__link" href="#experience">Experience</a></div>
+      <div class="nav__item"><a class="nav__link" href="#about">About</a></div>
+    </nav>
+    <div class="nav__actions">
+      <a class="nav__link" href="/Carlos_de_Anda_Resume.pdf" target="_blank" rel="noreferrer">Résumé</a>
+      <a class="btn btn--primary" href="mailto:carlosfelipedeanda@gmail.com">Email Carlos</a>
+    </div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero hero--split" data-enter aria-labelledby="hero-h">
+    <div class="wrap"><div class="hero-text grid hero__grid">
+      <div class="hero__text span-5">
+        <p class="hero__kicker"><span class="dot" aria-hidden="true"></span>Open to a Summer 2027 internship</p>
+        <h1 id="hero-h">Carlos de Anda, CS student at Tec de Monterrey</h1>
+        <p class="hero__lead">Web apps, IoT prototypes and campus networks, built in Guadalajara. GPA 9.65 of 10, graduating June 2028.</p>
+        <div class="btn-row"><a class="btn btn--primary" href="mailto:carlosfelipedeanda@gmail.com">Email Carlos</a><a class="btn btn--secondary" href="/Carlos_de_Anda_Resume.pdf" target="_blank" rel="noreferrer">Download résumé</a></div>
+      </div>
+      <div class="hero__media span-6 start-7" data-moment="liquid-hover" data-moment-opts='{"strength": 0.6}'>
+        <img src="./src/assets/smart-mirror-team.webp" srcset="./src/assets/smart-mirror-team-400.webp 400w, ./src/assets/smart-mirror-team-700.webp 700w, ./src/assets/smart-mirror-team.webp 1100w" sizes="(min-width: 1024px) 628px, calc(100vw - 48px)" alt="The Smart Mirror team, Carlos among them, holding the first-place certificate at Tecnológico de Monterrey" width="1100" height="1467" style="--ly-pos: 50% 70%" fetchpriority="high" data-source="client" data-subject="the Smart Mirror team">
+        <div class="ly-float">
+          <div class="ly-float__row"><span class="ly-live">Expo Ingenierías</span><span>2026</span></div>
+          <div class="ly-float__title">1st place, Smart Mirror System</div>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="section" id="mirror" aria-labelledby="mirror-h">
+    <div class="wrap">
+      <div class="grid grid--top">
+        <div class="span-5 stack-5">
+          <h2 id="mirror-h">Smart Mirror System. <span class="muted">Built by a team of five.</span></h2>
+          <p class="t-lead">Face recognition on a Raspberry Pi hub, motion and light sensors on NodeMCU, and PWM lighting, all shown in a live React dashboard.</p>
+          <p>My part: the physical build, the dashboard widgets and the news API behind them.</p>
+          <p><a class="link" href="https://github.com/danihdz11/Smart-Mirror" target="_blank" rel="noreferrer">Read the code on GitHub</a></p>
+        </div>
+        <div class="frame frame--split frame--lit span-6 start-7">
+          <div class="dg" data-diagram data-dg-still><script type="application/json">{"layout":"hub","alt":"A Raspberry Pi hub runs face recognition, reads NodeMCU motion and light sensors, drives PWM lighting and feeds the React dashboard and its news API.","center":{"label":"Raspberry Pi hub","icon":"raspberry-pi"},"spokes":[{"label":"Face recognition","icon":"python"},{"label":"NodeMCU sensors","icon":"ui:cpu"},{"label":"PWM lighting","icon":"ui:zap"},{"label":"React dashboard","icon":"react"},{"label":"News API","icon":"nodejs"}]}</script></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="voluntapp" aria-labelledby="voluntapp-h">
+    <div class="wrap">
+      <div class="grid grid--top">
+        <div class="span-5">
+          <div class="section-head">
+            <h2 id="voluntapp-h">VoluntApp for BAMX Guadalajara</h2>
+            <p>An Android app the food bank's staff use to run volunteer activities.</p>
+          </div>
+          <div class="tabs" role="tablist" aria-label="Steps of an activity">
+            <button class="tab" role="tab" id="t-1" aria-selected="true" aria-controls="tp-1 sc-1">Create activity</button>
+            <button class="tab" role="tab" id="t-2" aria-selected="false" aria-controls="tp-2 sc-2" tabindex="-1">Assign volunteers</button>
+            <button class="tab" role="tab" id="t-3" aria-selected="false" aria-controls="tp-3 sc-3" tabindex="-1">Take attendance</button>
+            <button class="tab" role="tab" id="t-4" aria-selected="false" aria-controls="tp-4 sc-4" tabindex="-1">Close activity</button>
+          </div>
+          <div class="tabpanel stack-4" role="tabpanel" id="tp-1" aria-labelledby="t-1"><p>Staff save an activity as a draft with its place, capacity and schedule, then publish it.</p></div>
+          <div class="tabpanel stack-4" role="tabpanel" id="tp-2" aria-labelledby="t-2" hidden><p>The app never lets an activity pass its capacity or puts one person in two activities at once.</p></div>
+          <div class="tabpanel stack-4" role="tabpanel" id="tp-3" aria-labelledby="t-3" hidden><p>Present, late or absent with one tap per person, by hand or by scanning a volunteer's QR card.</p></div>
+          <div class="tabpanel stack-4" role="tabpanel" id="tp-4" aria-labelledby="t-4" hidden><p>Closing attendance adds the hours to each volunteer's profile and to the reports.</p></div>
+          <p><a class="link" href="https://github.com/Guillermo-dlti/voluntapp" target="_blank" rel="noreferrer">Read the code on GitHub</a></p>
+        </div>
+        <div class="frame frame--split frame--lit span-6 start-7">
+          <div class="stage stage--fade-b">
+            <div class="shot" id="sc-1"><img src="./src/assets/voluntapp/1-create.webp" alt="VoluntApp screen Nueva actividad: a form with the activity's name, place, capacity and schedule" width="500" height="1116" loading="lazy" data-source="client" data-subject="VoluntApp screen"></div>
+            <div class="shot" id="sc-2" hidden><img src="./src/assets/voluntapp/3-assign.webp" alt="VoluntApp screen Asignar voluntario: a searchable list of active volunteers, the assigned ones marked" width="500" height="1116" loading="lazy" data-source="client" data-subject="VoluntApp screen"></div>
+            <div class="shot" id="sc-3" hidden><img src="./src/assets/voluntapp/4-attendance.webp" alt="VoluntApp attendance screen with Present, Late and Absent for each volunteer and a scan button" width="500" height="1116" loading="lazy" data-source="client" data-subject="VoluntApp screen"></div>
+            <div class="shot" id="sc-4" hidden><img src="./src/assets/voluntapp/5-finish.webp" alt="VoluntApp screen of a finished activity: attendance closed, 20 hours counted" width="500" height="1116" loading="lazy" data-source="client" data-subject="VoluntApp screen"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section g2" id="projects" aria-labelledby="projects-h">
+    <div class="wrap">
+      <div class="group">
+        <div class="section-head">
+          <h2 id="projects-h">More projects from 2025 and 2026</h2>
+        </div>
+        <div class="grid">
+          <article class="card card--row card--open span-6 m-nolift">
+            <h3>Chefsito runs a restaurant waitlist</h3>
+            <p>Diners join by QR code or a live map and get a notice when their table is ready.</p>
+            <div class="panel">
+              <div class="stage stage--fade-b"><div class="at-corner fit" style="--fit-max:380px;--ax:max(24px, 50% - 190px);--ay:40px" data-ui-still>
+                <div class="ui ui-panel ui-apps" data-ui="integrations">
+                  <div class="ui-head"><div class="ui-title">Chefsito stack</div><span class="ui-spacer"></span><div class="ui-meta">June 2026</div></div>
+                  <ul class="ui-apps__list">
+                    <li class="ui-app is-on"><span class="ui-logo ui-logo--sm"><img width="36" height="36" loading="lazy" data-icon="react" src="/assets/icons/react.svg" alt=""></span><span class="ui-app__text"><span class="ui-app__name">React</span><span class="ui-app__sub">Live map and dashboards</span></span></li>
+                    <li class="ui-app is-on"><span class="ui-logo ui-logo--sm"><img width="36" height="36" loading="lazy" data-icon="logos:socket.io" src="/assets/icons/socket.io.svg" alt=""></span><span class="ui-app__text"><span class="ui-app__name">Socket.io</span><span class="ui-app__sub">The live queue</span></span></li>
+                    <li class="ui-app is-on"><span class="ui-logo ui-logo--sm"><img width="36" height="36" loading="lazy" data-icon="postgres" src="/assets/icons/postgres.svg" alt=""></span><span class="ui-app__text"><span class="ui-app__name">PostgreSQL</span><span class="ui-app__sub">Tables and the line</span></span></li>
+                    <li class="ui-app is-on"><span class="ui-logo ui-logo--sm"><img width="36" height="36" loading="lazy" data-icon="nodejs" src="/assets/icons/nodejs.svg" alt=""></span><span class="ui-app__text"><span class="ui-app__name">Express</span><span class="ui-app__sub">The API and JWT sign-in</span></span></li>
+                  </ul>
+                </div>
+              </div></div>
+            </div>
+          </article>
+          <article class="card card--row card--open span-6 m-nolift">
+            <h3>Kueski Widget checks prices</h3>
+            <p>A Chrome extension built with Kueski that offers its checkout and emails you when a price drops.</p>
+            <div class="panel">
+              <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:380px;--ax:max(24px, 50% - 190px);--ay:40px;--ay-sm:24px" data-ui-still>
+                <div class="ui ui-notify" data-ui="notify">
+                  <ul class="ui-notify__list">
+                    <li class="ui-note"><span class="ui-note__ico"><img loading="lazy" src="/assets/icons/chrome.svg" alt="" width="16" height="16"></span><span class="ui-note__text"><span class="ui-note__title">The price dropped<time>now</time></span><span class="ui-note__body">Sent by email for a product you track</span></span></li>
+                    <li class="ui-note"><span class="ui-note__ico"><svg class="ui-icon" viewBox="0 0 16 16"><path d="m3.5 8.4 2.8 2.8 6.2-6.4"/></svg></span><span class="ui-note__text"><span class="ui-note__title">Kueski checkout offered<time>1m</time></span><span class="ui-note__body">On the product page at Amazon</span></span></li>
+                    <li class="ui-note"><span class="ui-note__ico"><svg class="ui-icon" viewBox="0 0 16 16"><path d="m3.5 8.4 2.8 2.8 6.2-6.4"/></svg></span><span class="ui-note__text"><span class="ui-note__title">Price found<time>2m</time></span><span class="ui-note__body">Read from the page at Bodega Aurrera</span></span></li>
+                  </ul>
+                </div>
+              </div></div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="card card--row card--open span-6 m-nolift">
+          <h3>A campus network for 3,200 users</h3>
+          <p>Six floors, 13 VLANs on a VLSM plan and 150+ Wi-Fi 6 access points, tested in Packet Tracer.</p>
+          <div class="panel">
+            <div class="dg" data-diagram data-dg-still><script type="application/json">{"layout":"tree","alt":"The WAN link feeds a Catalyst C8300 router, a C9500 core switch and C9300 access switches, which serve 13 VLANs and more than 150 Wi-Fi 6 access points.","root":{"label":"WAN 1.5 Gbps","icon":"ui:globe","children":[{"label":"C8300 router","icon":"ui:server","children":[{"label":"C9500 core","done":true}]},{"label":"C9300 access","icon":"ui:layers","children":[{"label":"13 VLANs","done":true},{"label":"150+ APs","done":true}]}]}}</script></div>
+          </div>
+        </article>
+        <article class="card card--row card--open span-6 m-nolift">
+          <h3>TMR Lunar Rover, 3rd nationwide</h3>
+          <p>Robotec's lunar rover for the Mexican Robotics Tournament, May 2025.</p>
+          <div class="panel">
+            <div class="stage stage--fade-b"><div class="at-corner fit" style="--fit-max:360px;--ax:max(24px, 50% - 180px);--ay:40px" data-ui-still>
+              <div class="ui ui-panel ui-checks" data-ui="checklist">
+                <div class="ui-checks__head"><div class="ui-title">My part on the rover</div><span class="ui-spacer"></span><div class="ui-meta">3 of 3</div></div>
+                <div class="ui-checks__bar"><i style="--k:1"></i></div>
+                <ul class="ui-checks__list">
+                  <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">Bluetooth wheel control</span></li>
+                  <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">PWM motor control</span></li>
+                  <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">AS5600 encoder controller</span></li>
+                </ul>
+              </div>
+            </div></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience" aria-labelledby="experience-h">
+    <div class="wrap">
+      <div class="grid grid--top">
+        <div class="span-6">
+          <div class="section-head"><h2 id="experience-h">Experience since 2023</h2></div>
+          <ul class="rows">
+            <li><span class="rows__name">Software Developer, Kueski industry project</span><p>A Chrome checkout and price-tracking extension, on a team of four.</p><span class="rows__value">2026</span></li>
+            <li><span class="rows__name">Vice President, FETEC</span><p>Strategy, budget and representation for 5,000+ students.</p><span class="rows__value">2026 to now</span></li>
+            <li><span class="rows__name">Tec Ambassador, 12th generation</span><p>Guides prospective engineering students and visiting delegations.</p><span class="rows__value">2026 to now</span></li>
+            <li><span class="rows__name">EGS Global Leadership Program</span><p>Golden Dandelion Certification, top 10%.</p><span class="rows__value">2025 to 2026</span></li>
+            <li><span class="rows__name">FIRST Robotics, Daedalus 7102</span><p>Mechanisms and drive strategy; the team reached the Houston championship.</p><span class="rows__value">2023 to 2024</span></li>
+          </ul>
+        </div>
+        <figure class="frame frame--split frame--photo span-6 start-7">
+          <img class="frame__img" src="./src/assets/carlos.webp" srcset="./src/assets/carlos-400.webp 400w, ./src/assets/carlos-700.webp 700w, ./src/assets/carlos.webp 1000w" sizes="(min-width: 1024px) 628px, calc(100vw - 48px)" alt="Carlos de Anda" width="1000" height="1333" loading="lazy" style="object-position: 60% 35%" data-source="client" data-subject="portrait of Carlos">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <div class="grid grid--top">
+        <div class="span-5 stack-5">
+          <h2 id="about-h">About Carlos</h2>
+          <p class="t-lead">At 17 I chose engineering over music production. I still play piano and ukulele, and combining both is my dream.</p>
+          <p>I co-founded WeCareClub, a student group that visits care homes. Spanish native, English C1, German B1.</p>
+        </div>
+        <div class="span-6 start-7">
+          <ul class="tools" role="img" aria-label="Languages and tools: Python, TypeScript, React, Node.js, MongoDB, PostgreSQL, Arduino, Raspberry Pi and Chrome extensions">
+            <li><img width="36" height="36" loading="lazy" src="/assets/icons/python.svg" alt="" data-icon="python">Python</li>
+            <li><img width="36" height="36" loading="lazy" src="/assets/icons/typescript.svg" alt="" data-icon="typescript">TypeScript</li>
+            <li><img width="36" height="36" loading="lazy" src="/assets/icons/react.svg" alt="" data-icon="react">React</li>
+            <li><img width="36" height="36" loading="lazy" src="/assets/icons/nodejs.svg" alt="" data-icon="nodejs">Node.js</li>
+            <li><img width="36" height="36" loading="lazy" src="/assets/icons/mongodb.svg" alt="" data-icon="mongodb">MongoDB</li>
+            <li><img width="36" height="36" loading="lazy" src="/assets/icons/postgres.svg" alt="" data-icon="postgres">PostgreSQL</li>
+            <li><img width="36" height="36" loading="lazy" src="/assets/icons/arduino.svg" alt="" data-icon="arduino">Arduino</li>
+            <li><img width="36" height="36" loading="lazy" src="/assets/icons/raspberry-pi.svg" alt="" data-icon="raspberry-pi">Raspberry Pi</li>
+            <li><img width="36" height="36" loading="lazy" src="/assets/icons/chrome.svg" alt="" data-icon="chrome">Chrome MV3</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer closing" id="contact" aria-labelledby="close-h">
+  <div class="wrap">
+    <div class="closing__cta close--word">
+      <div class="section-head--split">
+        <div><h2 id="close-h">Summer 2027 internship</h2><p class="t-lead">One-page résumé in PDF, with every project on this page.</p></div>
+        <a class="btn btn--primary" href="mailto:carlosfelipedeanda@gmail.com">Email Carlos<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+      </div>
+      <p class="close__word" aria-hidden="true">Carlos de Anda</p>
+    </div>
+    <div class="closing__links">
+      <div class="grid">
+        <div class="span-6 stack-4">
+          <a class="nav__logo" href="#top"><img src="/favicon.svg" alt="" width="28" height="28" loading="lazy">Carlos de Anda</a>
+          <p class="footer__lede">CS student at Tec, Guadalajara.</p>
+        </div>
+        <div class="span-2 footer__col"><h3>Work</h3><ul><li><a href="#mirror">Smart Mirror</a></li><li><a href="#voluntapp">VoluntApp</a></li><li><a href="#projects">Projects</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>About</h3><ul><li><a href="#experience">Experience</a></li><li><a href="#about">About</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Contact</h3><ul><li><a href="https://github.com/carlos-deanda" target="_blank" rel="noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/carlos-de-anda/" target="_blank" rel="noreferrer">LinkedIn</a></li><li><a href="/Carlos_de_Anda_Resume.pdf" target="_blank" rel="noreferrer">Résumé</a></li></ul></div>
+      </div>
+      <div class="footer__legal">
+        <span>&copy; 2026 Carlos de Anda</span>
+        <span>Product names and logos are trademarks of their owners</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="/assets/system.js"></script>
+<script type="module" src="/assets/motion/motion.js"></script>
+<script type="module" src="/assets/layout/layout.js"></script>
+<script type="module" src="/assets/diagrams/mount.js"></script>
+</body>
 </html>
