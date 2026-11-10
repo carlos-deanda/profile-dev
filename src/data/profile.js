@@ -17,6 +17,13 @@ export const contact = {
   resume: '/Carlos_de_Anda_Resume.pdf',
 };
 
+// Shown at the top of the hero, so recruiters see it in the first seconds.
+// Two parts: one line each on phones, joined with " · " on wider screens.
+export const availability = [
+  'Seeking a Summer 2027 software engineering internship',
+  'Graduating June 2028',
+];
+
 export const stats = [
   { value: '1st', label: 'Place, Expo Ingenierías — Physical Prototype' },
   { value: '3rd', label: 'Nationwide, Mexican Robotics Tournament' },

@@ -49,6 +49,12 @@ export function TrackLabel({ track, dark = false, className = '' }) {
   );
 }
 
+// External links and PDFs open in a new tab so visitors don't lose the page.
+function newTabProps(href) {
+  const newTab = href.startsWith('http') || href.endsWith('.pdf');
+  return newTab ? { target: '_blank', rel: 'noreferrer' } : {};
+}
+
 export function PillLink({ href, children, variant = 'solid', dark = false, className = '' }) {
   const light = {
     solid: 'bg-accent text-white hover:bg-accent-hover hover:text-white',
@@ -64,6 +70,7 @@ export function PillLink({ href, children, variant = 'solid', dark = false, clas
     <a
       href={href}
       className={`inline-flex min-h-12 items-center rounded-full px-[26px] text-[17px] font-medium ${styles} ${className}`}
+      {...newTabProps(href)}
     >
       {children}
     </a>
@@ -71,14 +78,13 @@ export function PillLink({ href, children, variant = 'solid', dark = false, clas
 }
 
 export function TextLink({ href, children, dark = false }) {
-  const newTab = href.startsWith('http') || href.endsWith('.pdf');
   return (
     <a
       href={href}
       className={`hover:underline ${
         dark ? 'text-accent-on-dark hover:text-accent-on-dark-hover' : ''
       }`}
-      {...(newTab ? { target: '_blank', rel: 'noreferrer' } : {})}
+      {...newTabProps(href)}
     >
       {children} ›
     </a>

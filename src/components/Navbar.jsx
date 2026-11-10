@@ -1,10 +1,13 @@
 import { Container } from './ui';
+import { contact } from '../data/profile';
 
+// `wide`: only from 640px up, so the phone menu still fits on one row with the résumé.
 const links = [
   { href: '#work', label: 'Work' },
   { href: '#experience', label: 'Experience' },
-  { href: '#about', label: 'About' },
+  { href: '#about', label: 'About', wide: true },
   { href: '#contact', label: 'Contact' },
+  { href: contact.resume, label: 'Résumé', newTab: true },
 ];
 
 export default function Navbar() {
@@ -19,9 +22,16 @@ export default function Navbar() {
           <img src="/favicon.svg" alt="" width="28" height="28" className="h-7 w-7 sm:hidden" />
           <span className="sr-only sm:not-sr-only">Carlos de Anda</span>
         </a>
-        <nav aria-label="Main" className="flex flex-wrap gap-x-5 gap-y-1 text-sm sm:gap-x-7">
+        <nav aria-label="Main" className="flex flex-wrap gap-x-4 gap-y-1 text-sm sm:gap-x-7">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="text-line hover:text-white">
+            <a
+              key={l.href}
+              href={l.href}
+              className={`hover:text-white ${l.newTab ? 'text-accent-on-dark' : 'text-line'} ${
+                l.wide ? 'hidden sm:inline' : ''
+              }`}
+              {...(l.newTab ? { target: '_blank', rel: 'noreferrer' } : {})}
+            >
               {l.label}
             </a>
           ))}
