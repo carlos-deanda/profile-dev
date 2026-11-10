@@ -196,12 +196,12 @@ function Line({ style }) {
   );
 }
 
-// When the timeline runs. Desktop: while the scene is pinned. Phones: from the moment the
-// scene enters until its bottom reaches mid-screen, so the keys are already fading in as it
-// slides up and the fade-out happens while it leaves, instead of a screen of empty black at
-// each end. The scene is pinned from about 0.29 to 0.86 of that range.
-const DESKTOP_OFFSET = ['start start', 'end end'];
-const PHONE_OFFSET = ['start end', 'end 0.5'];
+// When the timeline runs: from the moment the scene enters until its bottom reaches
+// mid-screen, so the keys are already fading in as it slides up and the fade-out happens while
+// it leaves, instead of a screen of empty black at each end. With the current heights (250vh
+// desktop, 240vh phones) the scene is pinned from about 0.33 to 0.83, so the drop (0.45)
+// always happens while it is pinned.
+const TIMELINE_OFFSET = ['start end', 'end 0.5'];
 
 function PinnedClimax({ light }) {
   const sectionRef = useRef(null);
@@ -209,7 +209,7 @@ function PinnedClimax({ light }) {
   const canvasRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: light ? PHONE_OFFSET : DESKTOP_OFFSET,
+    offset: TIMELINE_OFFSET,
   });
   const sound = useClimaxSound(stageRef);
   const { stateRef, engineRef, mutedRef } = sound;
@@ -255,7 +255,7 @@ function PinnedClimax({ light }) {
     <section
       ref={sectionRef}
       aria-label={climax.sectionLabel}
-      className={`relative bg-night text-mist ${light ? 'h-[300vh]' : 'h-[400vh]'}`}
+      className={`relative bg-night text-mist ${light ? 'h-[240vh]' : 'h-[250vh]'}`}
     >
       <div ref={stageRef} className="sticky top-0 h-screen overflow-hidden">
         <Glows build={buildGlow} party={partyGlow} flash={flash} fade={fade} />
